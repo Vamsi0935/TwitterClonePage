@@ -20,7 +20,7 @@ const SignOut = () => {
     if (result.isConfirmed) {
       try {
         const response = await axios.post(
-          "/signout",
+          "https://twitter-clone-page-api.vercel.app/api/auth/signout",
           {},
           { withCredentials: true },
           {
