@@ -14,13 +14,13 @@ const Posts = ({ feedType, currentUser }) => {
 
     switch (feedType) {
       case "forYou":
-        url = "http://localhost:5000/api/posts/all";
+        url = "https://twitter-clone-page-api.vercel.app/api/posts/all";
         break;
       case "following":
-        url = "http://localhost:5000/api/posts/following";
+        url = "https://twitter-clone-page-api.vercel.app/api/posts/following";
         break;
       default:
-        url = "http://localhost:5000/api/posts/all";
+        url = "https://twitter-clone-page-api.vercel.app/api/posts/all";
         break;
     }
 
