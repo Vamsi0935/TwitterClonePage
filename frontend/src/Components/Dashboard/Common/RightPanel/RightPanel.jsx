@@ -17,7 +17,7 @@ const RightPanel = ({ searchTerm, filteredItems }) => {
       try {
         const token = localStorage.getItem("token");
         const res = await axios.get(
-          "http://localhost:5000/api/users/suggested",
+          "https://twitter-clone-page-api.vercel.app/api/users/suggested",
           {
             headers: {
               Authorization: `Bearer ${token}`,
