@@ -1,0 +1,54 @@
+body {
+    background-color: black;
+    color: #14171a;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.sidebar {
+    background-color: black;
+    padding: 20px;
+    height: 50vh;
+}
+
+.search-container {
+    flex: 2;
+    padding: 20px;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    margin-left: 20%;
+}
+
+input[type="search"] {
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px 20px;
+    width: 90%;
+    transition: border-color 0.3s;
+}
+
+input[type="search"]:focus {
+    border-color: #1da1f2;
+    outline: none;
+}
+
+.btn {
+    border-radius: 20px;
+    background-color: #1da1f2;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #1991db;
+}
+
+.right-panel {
+    flex: 1;
+    background-color: black;
+    padding: 20px;
+}

@@ -1,0 +1,244 @@
+.profile-container {
+    max-width: 800px;
+    flex: 4;
+    border-right: 1px solid #374151;
+    border-left: 1px solid #374151;
+    min-height: 100vh;
+    margin-left: 20%;
+    padding: 5px;
+}
+
+.user-not-found {
+    text-align: center;
+    font-size: 1.125rem;
+    margin-top: 1rem;
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-header {
+    display: flex;
+    gap: 2.5rem;
+    /* Equivalent to gap-10 */
+    padding: 0.5rem 1rem;
+    /* Equivalent to px-4 py-2 */
+    align-items: center;
+}
+
+.back-link {
+    display: flex;
+}
+
+.icon {
+    width: 1rem;
+    /* Equivalent to w-4 */
+    height: 1rem;
+    /* Equivalent to h-4 */
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-name {
+    font-weight: bold;
+    font-size: 1.125rem;
+    /* Equivalent to text-lg */
+}
+
+.post-count {
+    font-size: 0.875rem;
+    /* Equivalent to text-sm */
+    color: #6b7280;
+    /* Equivalent to text-slate-500 */
+}
+
+.cover-img-container {
+    position: relative;
+    /* Group hover effect can be handled with CSS if desired */
+}
+
+.cover-img {
+    height: 13rem;
+    /* Equivalent to h-52 */
+    width: 100%;
+    object-fit: cover;
+}
+
+.edit-cover-icon {
+    position: absolute;
+    top: 0.5rem;
+    /* Equivalent to top-2 */
+    right: 0.5rem;
+    /* Equivalent to right-2 */
+    border-radius: 9999px;
+    /* Equivalent to rounded-full */
+    padding: 0.5rem;
+    /* Equivalent to p-2 */
+    background-color: rgba(31, 41, 55, 0.75);
+    /* bg-gray-800 bg-opacity-75 */
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.cover-img-container:hover .edit-cover-icon {
+    opacity: 1;
+}
+
+.avatar-container {
+    position: absolute;
+    bottom: -4rem;
+    left: 1rem;
+}
+
+.profile-avatar {
+    width: 140px;
+    border-radius: 9999px;
+    border: 2px solid white;
+    overflow: hidden;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+}
+
+.edit-profile-icon {
+    position: absolute;
+    bottom: -0rem;
+    right: -0.2rem;
+    border-radius: 99%;
+    background-color: white;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.follow-button {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+}
+
+.update-button {
+    flex: 0;
+    width: 300px;
+    height: 50px;
+    font-size: 0.875rem;
+    background-color: #34d399;
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    margin-top: 40px;
+    transition: background-color 0.3s;
+}
+
+.update-button:hover {
+    background-color: #28a745;
+}
+
+.user-details {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.details-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-fullName {
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.username {
+    color: #6b7280;
+}
+
+.bio {
+    color: #6b7280;
+    font-size: 20px;
+}
+
+.link-calendar {
+    display: flex;
+    gap: 1rem;
+    /* Equivalent to gap-4 */
+}
+
+.external-link {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    /* Equivalent to gap-1 */
+}
+
+.link-text {
+    color: #3b82f6;
+    /* Equivalent to text-blue-600 */
+}
+
+.join-date {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    /* Equivalent to gap-1 */
+}
+
+.follow-info {
+    display: flex;
+    gap: 2rem;
+    /* Equivalent to gap-8 */
+}
+
+.count {
+    font-weight: bold;
+}
+
+.label {
+    color: #6b7280;
+    /* Equivalent to text-slate-500 */
+}
+
+.feed-tabs {
+    display: flex;
+    margin: 1rem 0;
+    /* Equivalent to my-4 */
+}
+
+.feed-tab {
+    padding: 0.5rem 1rem;
+    /* Equivalent to px-4 py-2 */
+    cursor: pointer;
+    position: relative;
+}
+
+.feed-tab.inactive {
+    color: #6b7280;
+    /* Equivalent to text-slate-500 */
+}
+
+.active-indicator {
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: -0.5rem;
+    /* Equivalent to -mb-2 */
+}

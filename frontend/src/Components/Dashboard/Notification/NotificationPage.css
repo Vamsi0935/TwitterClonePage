@@ -1,0 +1,146 @@
+/* NotificationPage.css */
+
+.notification-container {
+    flex: 4;
+    border-left: 1px solid #e1e8ed;
+    /* Light gray border for separation */
+    border-right: 1px solid #e1e8ed;
+    max-width: 800px;
+    margin-left: 20%;
+    /* Light gray border for separation */
+    min-height: 100vh;
+    /* Fill the screen height */
+    background-color: black;
+    /* White background */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    /* Soft shadow for depth */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    /* Padding for header */
+    border-bottom: 1px solid #e1e8ed;
+    /* Light gray border */
+    background-color: black;
+    color: white;
+    /* Light gray background for the header */
+}
+
+.header-title {
+    font-weight: bold;
+    /* Bold font for title */
+    font-size: 1.5rem;
+    /* Larger font size */
+    color: white;
+    /* Dark color for contrast */
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-button {
+    margin: 0.25rem;
+    /* Small margin */
+    cursor: pointer;
+    /* Pointer for dropdown button */
+    color: #1da1f2;
+    /* Twitter blue color */
+    font-size: 1.25rem;
+    /* Slightly larger icon */
+}
+
+.dropdown-content {
+    position: absolute;
+    z-index: 1;
+    padding: 0.5rem;
+    /* Padding for dropdown */
+    background-color: white;
+    /* White background */
+    border-radius: 0.25rem;
+    /* Slightly rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+    width: 15rem;
+    /* Width for dropdown */
+}
+
+.notification-message {
+    border-bottom: 1px solid #e1e8ed;
+    /* Light gray border */
+}
+
+.notification-item {
+    display: flex;
+    align-items: center;
+    /* Center items vertically */
+    gap: 1rem;
+    /* Gap between elements */
+    padding: 1rem;
+    /* Padding for each notification */
+    transition: background-color 0.2s;
+    /* Transition for hover effect */
+}
+
+.avatar {
+    width: 2.5rem;
+    /* Slightly larger avatar */
+    height: 2.5rem;
+    /* Match height for rounded effect */
+    border-radius: 50%;
+    /* Circle shape for avatar */
+    overflow: hidden;
+    /* Hide overflow for rounded image */
+}
+
+.avatar img {
+    width: 100%;
+    /* Full width for image */
+    height: auto;
+    /* Auto height */
+}
+
+.username {
+    font-weight: bold;
+    /* Bold font for username */
+    color: white;
+    /* Twitter blue for username */
+}
+
+.no-notifications {
+    text-align: center;
+    /* Center text */
+    padding: 2rem;
+    /* Padding for no notifications message */
+    font-weight: bold;
+    /* Bold font for message */
+    color: #657786;
+    /* Gray color for subdued text */
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+
+.loading-spinner {
+    /* Add your loading spinner styles here */
+}
+
+.delete-btn {
+    background-color: transparent;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.delete-btn:hover {
+    color: #0056b3;
+    text-decoration: none;
+}

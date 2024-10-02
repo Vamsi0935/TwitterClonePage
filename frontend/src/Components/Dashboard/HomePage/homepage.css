@@ -1,0 +1,109 @@
+.homepage {
+    font-family: 'Arial', sans-serif;
+    max-width: 800px;
+    margin-left: 20%;
+    padding: 15px;
+    background-color: black;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e1e8ed;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.feed-option {
+    padding: 10px 150px;
+    cursor: pointer;
+    color: #1da1f2;
+    transition: color 0.3s;
+}
+
+.feed-option:hover {
+    color: #0a85d8;
+}
+
+.active {
+    font-weight: bold;
+}
+
+.active-indicator {
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: -1px;
+    /* Position it below the text */
+    left: 0;
+}
+
+/* Create Post styles */
+.create-post {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    margin-bottom: 20px;
+}
+
+/* Posts feed styles */
+.posts {
+    background-color: white;
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    padding: 20px;
+}
+
+.post {
+    border-bottom: 1px solid #e1e8ed;
+    /* Separator between posts */
+    padding: 15px 0;
+}
+
+.post:last-child {
+    border: none;
+    /* No border on the last post */
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.post-author {
+    font-weight: bold;
+    color: #14171a;
+    /* Dark text for author */
+}
+
+.post-time {
+    color: #657786;
+    margin-left: 10px;
+    font-size: 0.85em;
+}
+
+.post-content {
+    color: #14171a;
+}
+
+@media (max-width: 800px) {
+    .homepage {
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 500px) {
+    .homepage {
+        max-width: 100%;
+        /* Full width on very small screens */
+        padding: 10px;
+        /* Less padding on small screens */
+    }
+}

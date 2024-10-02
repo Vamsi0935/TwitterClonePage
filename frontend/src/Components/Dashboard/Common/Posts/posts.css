@@ -1,0 +1,147 @@
+/* post.css */
+
+.post-container {
+    display: flex;
+    border: 1px solid #e2e8f0;
+    /* Light gray border */
+    border-radius: 8px;
+    /* Rounded corners */
+    margin: 16px 0;
+    /* Space between posts */
+    padding: 16px;
+    /* Inner spacing */
+    background-color: black;
+    /* White background */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+}
+
+.avatar {
+    margin-right: 16px;
+    /* Space between avatar and post content */
+}
+
+.avatar img {
+    width: 48px;
+    /* Avatar size */
+    height: 48px;
+    /* Avatar size */
+    border-radius: 50%;
+    /* Circular avatar */
+}
+
+.post-info {
+    flex: 1;
+    /* Allow post info to take remaining space */
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    /* Align items vertically */
+    justify-content: space-between;
+    /* Space between title and delete icon */
+}
+
+.post-header .font-bold {
+    font-weight: bold;
+    /* Bold font for username */
+}
+
+.text-gray-700 {
+    color: #4a5568;
+    /* Dark gray text color */
+}
+
+.post-content {
+    margin: 12px 0;
+    /* Margin for spacing */
+}
+
+.post-image {
+    max-width: 100%;
+    /* Responsive image */
+    border-radius: 8px;
+    /* Rounded corners for images */
+}
+
+.post-footer {
+    display: flex;
+    /* Align action icons in a row */
+    justify-content: space-between;
+    /* Space between action icons */
+    margin-top: 12px;
+    /* Margin above footer */
+}
+
+.actions {
+    display: flex;
+    /* Align actions horizontally */
+    gap: 12px;
+    /* Space between action icons */
+}
+
+.comment-modal {
+    border-radius: 8px;
+    /* Rounded corners for modal */
+}
+
+.modal-box {
+    padding: 16px;
+    /* Inner spacing for modal */
+    background-color: #ffffff;
+    /* White background for modal */
+}
+
+.modal-header {
+    font-size: 1.25rem;
+    /* Larger font for header */
+    margin-bottom: 12px;
+    /* Space below header */
+}
+
+.modal-content {
+    max-height: 400px;
+    /* Limit modal height */
+    overflow-y: auto;
+    /* Scroll if content overflows */
+}
+
+.modal-footer {
+    margin-top: 12px;
+    /* Space above footer */
+}
+
+.textarea {
+    width: 100%;
+    /* Full width for textarea */
+    padding: 8px;
+    /* Inner spacing for textarea */
+    border-radius: 4px;
+    /* Rounded corners */
+    border: 1px solid #cbd5e0;
+    /* Light gray border */
+}
+
+.btn {
+    background-color: #4299e1;
+    /* Primary button color */
+    color: #ffffff;
+    /* Button text color */
+    padding: 8px 16px;
+    /* Inner spacing for button */
+    border-radius: 4px;
+    /* Rounded corners for button */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+}
+
+.close-modal {
+    cursor: pointer;
+    /* Pointer cursor for close button */
+}
+
+.close-modal:hover {
+    color: #e53e3e;
+    /* Change color on hover */
+}

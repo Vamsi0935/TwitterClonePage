@@ -1,0 +1,152 @@
+.create-post {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    background-color: black;
+    color: white;
+}
+
+.avatar {
+    margin-right: 15px;
+}
+
+.avatar img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.form {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.textarea {
+    border: 1px solid black;
+    font-size: 16px;
+    resize: none;
+    margin-bottom: 10px;
+    width: 100%;
+    min-height: 80px;
+    padding: 0.5rem;
+    color: white;
+    background-color: transparent;
+}
+
+.textarea::placeholder {
+    color: #657786;
+    /* Placeholder text color */
+}
+
+.image-preview {
+    position: relative;
+    /* Positioning for preview */
+    margin-bottom: 10px;
+    /* Margin below */
+}
+
+.image-preview img {
+    max-width: 100%;
+    /* Responsive image */
+    border-radius: 8px;
+    /* Rounded corners */
+}
+
+.close-button {
+    position: absolute;
+    /* Positioning for close button */
+    top: 5px;
+    /* Distance from top */
+    right: 5px;
+    /* Distance from right */
+    background: rgba(0, 0, 0, 0.6);
+    /* Background color */
+    color: white;
+    /* Text color */
+    border-radius: 50%;
+    /* Circular button */
+    padding: 2px;
+    /* Padding around button */
+    cursor: pointer;
+    /* Pointer cursor */
+    font-size: 18px;
+    /* Font size */
+}
+
+/* Footer section with icons and button */
+.footer {
+    display: flex;
+    /* Use flexbox for layout */
+    justify-content: space-between;
+    /* Space items evenly */
+    align-items: center;
+    /* Center items vertically */
+    width: 100%;
+    /* Full width */
+}
+
+.footer-icons {
+    display: flex;
+    gap: 10px;
+    color: #1da1f2;
+}
+
+.footer-icons svg {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.footer-icons svg:hover {
+    opacity: 0.8;
+}
+
+.follow-button {
+    background-color: #1da1f2;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.follow-button:hover {
+    background-color: #1a8cd8;
+}
+
+.footer-error {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .textarea {
+        min-height: 60px;
+        /* Minimum height for smaller screens */
+    }
+
+    .avatar img {
+        width: 40px;
+        /* Smaller avatar */
+        height: 40px;
+        /* Smaller avatar */
+    }
+
+    .footer-icons svg {
+        font-size: 20px;
+        /* Smaller icon size */
+    }
+
+    .follow-button {
+        padding: 6px 12px;
+        /* Smaller padding */
+        font-size: 12px;
+        /* Smaller font size */
+    }
+}

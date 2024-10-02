@@ -1,0 +1,125 @@
+/* Container for the entire right panel */
+.right-panel {
+    width: 100%;
+    max-width: 350px;
+    height: 50vh;
+    background-color: black;
+    border-radius: 16px;
+    padding: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.right-panel-header {
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.header-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+.user-list {
+    display: flex;
+    flex-direction: column;
+    /* gap: 12px; */
+}
+
+.user-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 5px 0; */
+    text-decoration: none;
+    border-bottom: 1px solid #e1e8ed;
+    transition: background-color 0.3s ease;
+}
+
+.user-item:last-child {
+    border-bottom: none;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 12px;
+}
+
+.avatar-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-fullname {
+    font-size: 16px;
+    font-weight: bold;
+    color: #14171a;
+}
+
+.user-username {
+    font-size: 14px;
+    color: #657786;
+}
+
+.follow-btn {
+    padding: 8px 20px;
+    background-color: #1da1f2;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.follow-btn:hover {
+    background-color: #1991db;
+}
+
+.follow-btn:active {
+    background-color: #1878c0;
+}
+
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .right-panel {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .user-item {
+        padding: 8px 0;
+    }
+
+    .follow-btn {
+        padding: 6px 16px;
+        font-size: 12px;
+    }
+}
