@@ -37,7 +37,7 @@ const CreatePost = () => {
         formData.append("videos", video);
       });
 
-      await axios.post("http://localhost:5000/api/posts/create", formData, {
+      await axios.post("https://twitter-clone-page-api.vercel.app/api/posts/create", formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data",
