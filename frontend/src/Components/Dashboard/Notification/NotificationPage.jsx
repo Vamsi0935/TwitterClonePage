@@ -21,7 +21,7 @@ const NotificationPage = () => {
     const fetchNotifications = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/notifications",
+          "https://twitter-clone-page-api.vercel.app/api/notifications",
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -53,7 +53,7 @@ const NotificationPage = () => {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete("http://localhost:5000/api/notifications/delete", {
+        await axios.delete("https://twitter-clone-page-api.vercel.app/api/notifications/delete", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         setNotifications([]);
