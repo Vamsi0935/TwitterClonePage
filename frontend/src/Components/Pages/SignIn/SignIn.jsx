@@ -21,7 +21,7 @@ const SignIn = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/signin",
+        "https://twitter-clone-page-api.vercel.app/api/auth/signin",
         { email, password },
         { withCredentials: true }
       );
