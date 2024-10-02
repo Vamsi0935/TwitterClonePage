@@ -57,7 +57,7 @@ const Post = ({ post, currentUser }) => {
     }
 
     try {
-      await axios.delete(`http://localhost:5000/api/posts/delete/${post._id}`, {
+      await axios.delete(`https://twitter-clone-page-api.vercel.app/api/posts/delete/${post._id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       Swal.fire("Deleted!", "Your post has been deleted.", "success");
@@ -81,7 +81,7 @@ const Post = ({ post, currentUser }) => {
 
     try {
       await axios.post(
-        `http://localhost:5000/api/posts/comment/${post._id}`,
+        `https://twitter-clone-page-api.vercel.app/api/posts/comment/${post._id}`,
         { text: comment },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -105,7 +105,7 @@ const Post = ({ post, currentUser }) => {
 
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/posts/like/${post._id}`,
+        `https://twitter-clone-page-api.vercel.app/api/posts/like/${post._id}`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
