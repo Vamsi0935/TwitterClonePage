@@ -24,7 +24,7 @@ const useFollow = () => {
 
       // Make the API request to follow/unfollow
       const res = await axios.post(
-        `http://localhost:5000/api/users/follow/${userId}`, // Replace with your actual backend URL
+        `https://twitter-clone-page-api.vercel.app/api/users/follow/${userId}`, // Replace with your actual backend URL
         {},
         {
           headers: {
