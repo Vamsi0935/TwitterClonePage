@@ -15,6 +15,7 @@ const NotificationPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [notifications, setNotifications] = useState([]);
   const [error, setError] = useState(null);
+  const [showDeleteOption, setShowDeleteOption] = useState(false); // New state for delete option visibility
 
   // Fetch notifications on component load
   useEffect(() => {
@@ -29,6 +30,7 @@ const NotificationPage = () => {
           }
         );
         setNotifications(response.data);
+        setShowDeleteOption(response.data.length > 0); // Show delete option if notifications exist
       } catch (error) {
         setError("Error fetching notifications");
         console.log("Error fetching notifications", error);
@@ -56,7 +58,8 @@ const NotificationPage = () => {
         await axios.delete("http://localhost:5000/api/notifications/delete", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
-        setNotifications([]);
+        setNotifications([]); // Clear notifications
+        setShowDeleteOption(false); // Hide delete option after deletion
         Swal.fire(
           "Deleted!",
           "All notifications have been deleted.",
@@ -81,9 +84,14 @@ const NotificationPage = () => {
                 <IoSettingsOutline />
               </div>
               <ul tabIndex={0} className="dropdown-content">
-                <li>
-                  <a onClick={deleteNotifications}>Delete all notifications</a>
-                </li>
+                {showDeleteOption &&
+                  notifications.length > 0 && ( 
+                    <li>
+                      <a onClick={deleteNotifications} className="text-danger">
+                        Delete all notifications
+                      </a>
+                    </li>
+                  )}
               </ul>
             </div>
           </div>

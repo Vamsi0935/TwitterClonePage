@@ -74,7 +74,7 @@ const RightPanel = ({ searchTerm, filteredItems }) => {
           {!isLoading &&
             displayedUsers.map((user) =>
               user?.userName ? (
-                <Link
+                <Link 
                   to={`/profile/${user.userName}`}
                   className="user-item"
                   key={user._id}

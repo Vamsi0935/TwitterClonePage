@@ -10,64 +10,44 @@ const Posts = ({ feedType, currentUser }) => {
 
   const fetchPosts = async () => {
     const token = localStorage.getItem("token");
-    let url;
-
-    switch (feedType) {
-      case "forYou":
-        url = "http://localhost:5000/api/posts/all";
-        break;
-      case "following":
-        url = "http://localhost:5000/api/posts/following";
-        break;
-      default:
-        url = "http://localhost:5000/api/posts/all";
-        break;
-    }
+    const apiUrl =
+      feedType === "following"
+        ? "http://localhost:5000/api/posts/following"
+        : "http://localhost:5000/api/posts/all";
 
     try {
-      const response = await axios.get(url, {
+      const { data } = await axios.get(apiUrl, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-      setPosts(response.data);
+      setPosts(data);
+      setError(null);
     } catch (err) {
-      setError("Failed to fetch posts."); 
+      setError("Failed to fetch posts. Please try again later.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
   useEffect(() => {
-    const loadPosts = async () => {
-      setIsLoading(true);
-      try {
-        await fetchPosts();
-      } catch (err) {
-        setError(err.message); 
-      } finally {    
-        setIsLoading(false); 
-      }
-    };
-
-    loadPosts();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    fetchPosts();
   }, [feedType]);
 
+  if (isLoading) {
+    return <div className="loading">Loading posts...</div>;
+  }
+
+  if (error) {
+    return <div className="error">{error}</div>;
+  }
+
   return (
-    <>
-      {error && <p className="error-message">{error}</p>}
-      {!isLoading && posts.length === 0 && (
-        <p className="no-posts-message text-light">
-          No posts available. Switch the feed type! 👻
-        </p>
-      )}
-      {!isLoading && posts.length > 0 && (
-        <div className="posts-container">
-          {posts.map((post) => (
-            <Post key={post._id} post={post} currentUser={currentUser} />
-          ))}
-        </div>
-      )}
-    </>
+    <div className="posts-container">
+      {posts.map((post) => (
+        <Post key={post._id} post={post} currentUser={currentUser} />
+      ))}
+    </div>
   );
 };
 

@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
+import React, { useState, useEffect, useRef } from "react";
 import {
   FaRegComment,
   FaRegHeart,
@@ -6,7 +8,6 @@ import {
   FaTrash,
 } from "react-icons/fa";
 import { BiRepost } from "react-icons/bi";
-import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -15,24 +16,16 @@ import "./post.css";
 const Post = ({ post, currentUser }) => {
   const [comment, setComment] = useState("");
   const [isLiked, setIsLiked] = useState(false);
-  const [likeCount, setLikeCount] = useState(post.likes?.length || 0);
+  const [likeCount, setLikeCount] = useState(post.likes?.length || 0); // Initialize from post data
   const [isCommenting, setIsCommenting] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const videoRef = useRef(null); // Create a reference for the video element
+  const videoRef = useRef(null);
 
   const postOwner = post?.user || {};
   const isMyPost = currentUser?._id === postOwner?._id;
-
   const formattedDate = post.createdAt
     ? new Date(post.createdAt).toLocaleDateString()
     : "Just now";
-
-  useEffect(() => {
-    if (post.likes && currentUser?._id) {
-      setIsLiked(post.likes.includes(currentUser._id));
-    }
-  }, [post.likes, currentUser?._id]);
 
   const handleDeletePost = async () => {
     const confirmDelete = await Swal.fire({
@@ -138,7 +131,7 @@ const Post = ({ post, currentUser }) => {
           to={`/profile/${postOwner.userName}`}
           className="rounded-full overflow-hidden"
         >
-          <img src={"/avatar-placeholder.png"} alt="Profile" />
+          <img src="/avatar-placeholder.png" alt="Profile" />
         </Link>
       </div>
       <div className="post-info">
@@ -163,32 +156,35 @@ const Post = ({ post, currentUser }) => {
           )}
         </div>
         <div className="post-content text-light">
-          <span>{post.text}</span> {/* Fixed here */}
-          {post.images && post.images.length > 0 && (
+          <span>{post.text}</span>
+          {post.images?.length > 0 && (
             <div className="post-images">
               {post.images.map((image, index) => (
                 <img
-                  key={index} // Add a unique key for each image
+                  key={index}
                   src={image}
                   className="post-image"
-                  alt={`Post content ${index + 1}`}
+                  alt={`Post image ${index + 1}`}
                 />
               ))}
             </div>
           )}
-          {post.videos && post.videos.length > 0 && (
+          {post.videos?.length > 0 && (
             <div className="post-video-container">
-              <video
-                ref={videoRef}
-                controls
-                className="post-video"
-                width="100%"
-                preload="metadata"
-                onClick={togglePlayPause}
-              >
-                <source src={post.videos[0]} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              {post.videos.map((video, index) => (
+                <video
+                  key={index}
+                  ref={videoRef}
+                  controls
+                  className="post-video"
+                  width="100%"
+                  preload="metadata"
+                  onClick={togglePlayPause}
+                >
+                  <source src={video} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              ))}
             </div>
           )}
         </div>
@@ -266,10 +262,7 @@ const Post = ({ post, currentUser }) => {
             </div>
             <div className="repost-action cursor-pointer">
               <BiRepost className="icon" />
-              <span className="repost-count">{post.reposts?.length || 0}</span>
-            </div>
-            <div className="save-action cursor-pointer">
-              <FaRegBookmark className="icon" />
+              <span className="repost-count">{post.reposts || 0}</span>
             </div>
           </div>
         </div>

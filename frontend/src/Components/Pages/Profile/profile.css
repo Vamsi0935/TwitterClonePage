@@ -180,32 +180,27 @@
 .link-calendar {
     display: flex;
     gap: 1rem;
-    /* Equivalent to gap-4 */
 }
 
 .external-link {
     display: flex;
     align-items: center;
     gap: 0.25rem;
-    /* Equivalent to gap-1 */
 }
 
 .link-text {
     color: #3b82f6;
-    /* Equivalent to text-blue-600 */
 }
 
 .join-date {
     display: flex;
     align-items: center;
     gap: 0.25rem;
-    /* Equivalent to gap-1 */
 }
 
 .follow-info {
     display: flex;
     gap: 2rem;
-    /* Equivalent to gap-8 */
 }
 
 .count {
@@ -214,25 +209,21 @@
 
 .label {
     color: #6b7280;
-    /* Equivalent to text-slate-500 */
 }
 
 .feed-tabs {
     display: flex;
     margin: 1rem 0;
-    /* Equivalent to my-4 */
 }
 
 .feed-tab {
     padding: 0.5rem 1rem;
-    /* Equivalent to px-4 py-2 */
     cursor: pointer;
     position: relative;
 }
 
 .feed-tab.inactive {
     color: #6b7280;
-    /* Equivalent to text-slate-500 */
 }
 
 .active-indicator {
@@ -240,5 +231,11 @@
     width: 100%;
     position: absolute;
     bottom: -0.5rem;
-    /* Equivalent to -mb-2 */
+}
+
+.feed-button {
+    color: white;
+    background-color: black;
+    border: none;
+    padding: 0px 25px;
 }

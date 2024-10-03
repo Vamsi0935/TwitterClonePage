@@ -9,14 +9,14 @@
 
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     border-bottom: 1px solid #e1e8ed;
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
 
 .feed-option {
-    padding: 10px 150px;
+    padding: 10px 100px;
     cursor: pointer;
     color: #1da1f2;
     transition: color 0.3s;

@@ -73,7 +73,7 @@ const ProfilePage = () => {
 
   const handleImgChange = async (e, state) => {
     const file = e.target.files[0];
-    if (!file) return; 
+    if (!file) return;
 
     const reader = new FileReader();
     reader.onload = () => {
@@ -84,7 +84,7 @@ const ProfilePage = () => {
 
     const token = localStorage.getItem("token");
     const formData = new FormData();
-    const userId = user._id; 
+    const userId = user._id;
 
     formData.append(state === "profileImg" ? "profileImg" : "coverImg", file);
 
@@ -125,13 +125,6 @@ const ProfilePage = () => {
     }
   };
 
-  const currentDate = new Date();
-  const formattedDate = new Intl.DateTimeFormat("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  }).format(currentDate);
-
   return (
     <>
       <div className="d-flex justify-content-around">
@@ -157,7 +150,7 @@ const ProfilePage = () => {
               </div>
               <div className="cover-img-container">
                 <img
-                  src={coverImg || "/cover.png"} // Use the coverImg state
+                  src={"/cover.png"} 
                   className="cover-img"
                   alt="cover"
                 />
@@ -172,19 +165,21 @@ const ProfilePage = () => {
                 <input
                   type="file"
                   hidden
+                  accept='image/*'
                   ref={coverImgRef}
                   onChange={(e) => handleImgChange(e, "coverImg")}
                 />
                 <input
                   type="file"
                   hidden
+                  accept='image/*'
                   ref={profileImgRef}
                   onChange={(e) => handleImgChange(e, "profileImg")}
                 />
                 <div className="avatar-container">
                   <div className="profile-avatar">
                     <img
-                      src={profileImg || "/avatar-placeholder.png"} // Use the profileImg state
+                      src={"/avatar-placeholder.png"}
                       alt="Profile"
                     />
                     {isMyProfile && (
@@ -216,14 +211,6 @@ const ProfilePage = () => {
                     Follow
                   </button>
                 )}
-                {(coverImg || profileImg) && (
-                  <button
-                    className="update-button"
-                    onClick={() => Swal.fire("Profile updated successfully")}
-                  >
-                    Update
-                  </button>
-                )}
               </div>
 
               <div className="user-details">
@@ -234,14 +221,6 @@ const ProfilePage = () => {
                   <span className="username text-light">@{user.userName}</span>
                   <span className="bio">{user.bio}</span>
                 </div>
-
-                <div className="link-calendar">
-                  <div className="join-date">
-                    <IoCalendarOutline className="icon" />
-                    <span className="join-text">Joined {formattedDate}</span>
-                  </div>
-                </div>
-
                 <div className="follow-info">
                   <div className="following">
                     <span className="count">{user.following.length}</span>
@@ -263,13 +242,19 @@ const ProfilePage = () => {
                 >
                   Posts
                 </button>
-                {/* Removed Likes Button */}
+                <button
+                  className={`feed-button ${
+                    feedType === "likes" ? "active" : ""
+                  }`}
+                  onClick={() => setFeedType("likes")}
+                >
+                  Likes
+                </button>
               </div>
-
               <div className="user-feed">
                 {feedType === "posts" && <Posts userId={user._id} />}
+                {feedType === "likes"}
               </div>
-
               {isEditModalOpen && (
                 <EditProfileModal
                   user={user}

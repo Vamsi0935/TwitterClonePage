@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./homepage.css"; // Import the CSS file
+import "./homepage.css";
 import CreatePost from "../CreatePost/CreatePost";
 import Posts from "../Common/Posts/Posts";
 

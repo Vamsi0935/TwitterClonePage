@@ -20,7 +20,7 @@ const SignOut = () => {
     if (result.isConfirmed) {
       try {
         const response = await axios.post(
-          "/signout",
+          "http://localhost:5000/api/auth/signout",
           {},
           { withCredentials: true },
           {

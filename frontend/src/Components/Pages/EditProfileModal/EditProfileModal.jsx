@@ -11,10 +11,9 @@ const EditProfileModal = ({ onClose, user, setUser }) => {
     link: user?.link || "",
     newPassword: "",
     currentPassword: "",
-    profileImage: null, // Add state for the profile image
+    profileImage: null, 
   });
 
-  // State to manage password visibility
   const [showCurrentPassword, setShowCurrentPassword] = useState(false);
   const [showNewPassword, setShowNewPassword] = useState(false);
 
@@ -27,15 +26,14 @@ const EditProfileModal = ({ onClose, user, setUser }) => {
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setFormData({ ...formData, profileImage: file }); // Set the selected file
+      setFormData({ ...formData, profileImage: file }); 
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = new FormData(); // Use FormData to handle file upload
+    const data = new FormData(); 
 
-    // Append all form fields to FormData
     Object.entries(formData).forEach(([key, value]) => {
       data.append(key, value);
     });
@@ -49,7 +47,6 @@ const EditProfileModal = ({ onClose, user, setUser }) => {
     }
   };
 
-  // Toggle password visibility
   const toggleCurrentPasswordVisibility = () => {
     setShowCurrentPassword((prev) => !prev);
   };
@@ -107,7 +104,7 @@ const EditProfileModal = ({ onClose, user, setUser }) => {
               type="file"
               className="input-field"
               accept="image/*"
-              onChange={handleFileChange} // Handle file change
+              onChange={handleFileChange}
             />
             <div className="password-field">
               <input

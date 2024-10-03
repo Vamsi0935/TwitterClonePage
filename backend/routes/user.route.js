@@ -18,8 +18,8 @@ router.get("/profile/:userName", protectRoute, getUserProfile);
 router.get("/suggested", protectRoute, getSuggestedUsers);
 router.post("/follow/:id", protectRoute, followUnfollowUser);
 router.put("/update", protectRoute, updateUser);
-router.put("/upload/profile/:id", upload.single("profileImg"), uploadProfileImg);
-router.put("/upload/cover/:id", upload.single("coverImg"), uploadCoverImg);
+router.post("/upload/profile/:id", upload.single("profileImg"), uploadProfileImg);
+router.post("/upload/cover/:id", upload.single("coverImg"), uploadCoverImg);
 router.get('/user/:id/profile-image', getProfileImg);
 router.get('/user/:id/cover-image', getCoverImg);
 
