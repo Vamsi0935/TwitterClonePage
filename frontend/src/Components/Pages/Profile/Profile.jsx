@@ -27,7 +27,7 @@ const ProfilePage = () => {
     const fetchUserData = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get("http://localhost:5000/api/auth/me", {
+        const response = await axios.get("https://twitter-clone-page-api.vercel.app/api/auth/me", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUser(response.data);
@@ -49,13 +49,13 @@ const ProfilePage = () => {
         const token = localStorage.getItem("token");
         const userId = user._id; // Ensure user ID is available
         const profileImgResponse = await axios.get(
-          `http://localhost:5000/api/users/user/${userId}/profile-image`,
+          `https://twitter-clone-page-api.vercel.app/api/users/user/${userId}/profile-image`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
         );
         const coverImgResponse = await axios.get(
-          `http://localhost:5000/api/users/user/${userId}/cover-image`,
+          `https://twitter-clone-page-api.vercel.app/api/users/user/${userId}/cover-image`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -90,7 +90,7 @@ const ProfilePage = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/upload/${
+        `https://twitter-clone-page-api.vercel.app/api/upload/${
           state === "profileImg" ? "profile" : "cover"
         }/${userId}`,
         formData,

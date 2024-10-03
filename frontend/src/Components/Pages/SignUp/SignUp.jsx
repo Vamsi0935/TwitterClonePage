@@ -38,7 +38,7 @@ const SignUp = () => {
     } else {
       try {
         const response = await axios.post(
-          "http://localhost:5000/api/auth/signup",
+          "https://twitter-clone-page-api.vercel.app/api/auth/signup",
           {
             fullName,
             userName,
