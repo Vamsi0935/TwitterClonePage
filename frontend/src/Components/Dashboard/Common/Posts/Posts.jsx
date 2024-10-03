@@ -30,24 +30,35 @@ const Posts = ({ feedType, currentUser }) => {
     }
   };
 
+  const handleNewPost = (newPost) => {
+    setPosts((prevPosts) => [newPost, ...prevPosts]);
+  };
+
   useEffect(() => {
+    setIsLoading(true);
     fetchPosts();
   }, [feedType]);
 
   if (isLoading) {
-    return <div className="loading">Loading posts...</div>;
-  }
-
-  if (error) {
-    return <div className="error">{error}</div>;
+    return <p className="loading-message">Loading posts...</p>;
   }
 
   return (
-    <div className="posts-container">
-      {posts.map((post) => (
-        <Post key={post._id} post={post} currentUser={currentUser} />
-      ))}
-    </div>
+    <>
+      {error && <p className="error-message">{error}</p>}
+      {!error && posts.length === 0 && (
+        <p className="no-posts-message text-light">
+          No posts available. Switch the feed type! 👻
+        </p>
+      )}
+      {!error && posts.length > 0 && (
+        <div className="posts-container">
+          {posts.map((post) => (
+            <Post key={post._id} post={post} currentUser={currentUser} />
+          ))}
+        </div>
+      )}
+    </>
   );
 };
 

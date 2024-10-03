@@ -1,9 +1,9 @@
 import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa6";
-import { IoCalendarOutline } from "react-icons/io5";
+//import { IoCalendarOutline } from "react-icons/io5";
 import { MdEdit } from "react-icons/md";
-import Swal from "sweetalert2"; // Import SweetAlert2
+import Swal from "sweetalert2";
 import "./profile.css";
 import axios from "axios";
 import EditProfileModal from "../EditProfileModal/EditProfileModal";
